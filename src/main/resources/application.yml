@@ -1,0 +1,19 @@
+spring:
+  debug: enable
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:cadastro/api
+    driver-class-name: org.h2.Driver
+    username: cadastro
+    password:
+
+server:
+  port: 8080
+  servlet:
+    context-path: /cadastro/api
+
+app:
+  user:
+    default-password: 123

@@ -1,5 +1,6 @@
 package com.desafiofacil.dasafiofacil.cadastro.domain;
 
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
@@ -25,6 +26,7 @@ public class Cadastro {
     @NotNull
     private LocalDate dataNascimento;
     @NotBlank
+    @Embedded
     private Endereco endereco;
     private Sexo sexo;
 
