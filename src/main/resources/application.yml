@@ -4,7 +4,7 @@ spring:
     console:
       enabled: true
   datasource:
-    url: jdbc:h2:mem:cadastro/api
+    url: jdbc:h2:mem:/api
     driver-class-name: org.h2.Driver
     username: cadastro
     password:
