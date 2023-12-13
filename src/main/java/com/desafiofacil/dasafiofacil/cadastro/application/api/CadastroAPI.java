@@ -12,7 +12,7 @@ import java.util.UUID;
 public interface CadastroAPI {
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    void postNovoCadastro(@PathVariable Id cpf);
+    CadastroNovoResponse postNovoCadastro(@RequestBody @Valid CadastroNovoRequest cadastroNovo);
 
     @PatchMapping("/altera/{cpf}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
@@ -20,10 +20,10 @@ public interface CadastroAPI {
 
     @GetMapping("/{cpf}")
     @ResponseStatus(code = HttpStatus.OK)
-    void deletaCadastro(@PathVariable Id cpf);
+    void buscaCadastro(@PathVariable Id cpf);
 
     @DeleteMapping("/{cpf}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
-    void deletaTarefa(@PathVariable Id cpf);
+    void deletaCadastro(@PathVariable Id cpf);
 
 }

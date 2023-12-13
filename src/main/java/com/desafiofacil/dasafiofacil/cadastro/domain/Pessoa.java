@@ -12,10 +12,12 @@ import org.hibernate.validator.constraints.br.CPF;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 @Entity
-public class Cadastro {
+public class Pessoa {
     @Id
     @CPF
     private String cpf;
@@ -27,14 +29,14 @@ public class Cadastro {
     private LocalDate dataNascimento;
     @NotBlank
     @Embedded
-    private Endereco endereco;
+    private List<Endereco> endereco;
     private Sexo sexo;
 
     private LocalDateTime dataHoraCadastro;
     private LocalDateTime dataHoraAlteracao;
 
-    public Cadastro(String cpf, String nome, String altura, @NotNull LocalDate dataNascimento,
-                    Endereco endereco, Sexo sexo) {
+    public Pessoa(String cpf, String nome, String altura, @NotNull LocalDate dataNascimento,
+                  List<Endereco> endereco, Sexo sexo) {
         this.cpf = cpf;
         this.nome = nome;
         this.altura = altura;
