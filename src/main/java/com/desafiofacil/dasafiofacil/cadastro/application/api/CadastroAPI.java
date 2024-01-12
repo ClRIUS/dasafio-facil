@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("api/cadastro")
+@RequestMapping("/public/v1")
 public interface CadastroAPI {
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
@@ -16,7 +16,7 @@ public interface CadastroAPI {
 
     @PatchMapping("/altera/{cpf}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
-    void alteraCadastro(@PathVariable Id cpf);
+    void alteraCadastro(@PathVariable String cpf);
 
     @GetMapping("/{cpf}")
     @ResponseStatus(code = HttpStatus.OK)

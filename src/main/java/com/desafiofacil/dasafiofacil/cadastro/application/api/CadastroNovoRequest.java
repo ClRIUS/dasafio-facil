@@ -1,15 +1,17 @@
 package com.desafiofacil.dasafiofacil.cadastro.application.api;
 
+import com.desafiofacil.dasafiofacil.cadastro.domain.Endereco;
 import com.desafiofacil.dasafiofacil.cadastro.domain.Sexo;
-import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Value;
-import org.hibernate.validator.constraints.br.CPF;
 
 @Value
 public class CadastroNovoRequest {
-    @Id
-    @CPF
+    @NotNull
     private String cpf;
+    @NotBlank
     private String nome;
     private Sexo sexo;
+    private Endereco endereco;
 }

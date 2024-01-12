@@ -2,19 +2,11 @@ package com.desafiofacil.dasafiofacil;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
 @RestController
-@RequestMapping("/")
+@SpringBootApplication
 public class DasafioFacilApplication {
-	@GetMapping
-	public String teste(){
-		return "teste gabriel";
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(DasafioFacilApplication.class, args);
 	}
