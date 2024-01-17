@@ -16,7 +16,7 @@ public interface CadastroAPI {
 
     @PatchMapping("/altera/{cpf}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
-    void alteraCadastro(@PathVariable String cpf);
+    void alteraCadastro(@PathVariable String cpf,@RequestBody @Valid AlteraCadastroRequest alteraCadastro);
 
     @GetMapping("/{cpf}")
     @ResponseStatus(code = HttpStatus.OK)

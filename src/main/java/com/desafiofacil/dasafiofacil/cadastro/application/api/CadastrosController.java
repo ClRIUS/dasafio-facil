@@ -21,7 +21,7 @@ public class CadastrosController implements CadastroAPI{
     }
 
     @Override
-    public void alteraCadastro(String cpf) {
+    public void alteraCadastro(String cpf, AlteraCadastroRequest alteraCadastro) {
 
     }
 
