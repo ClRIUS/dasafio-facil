@@ -22,7 +22,17 @@ public class CadastrosController implements CadastroAPI{
 
     @Override
     public void alteraCadastro(String cpf, AlteraCadastroRequest alteraCadastro) {
+        log.info("[inicia] CadastrosController - alteraCadastro");
+        String pessoa = getPessoaByCpf(cpf);
+        cadastroService.alteraCadastro();
+        log.info("[finaliza] CadastrosController - alteraCadastro");
+    }
 
+    private String getPessoaByCpf(String cpf) {
+        log.debug("[cpf] {}", cpf);
+        return cadastroService.getPessoaByCpf(cpf)
+                .orElseThrow(() -> new IllegalArgumentException("Pessoa não encontrada para o CPF: " + cpf))
+                .toString();
     }
 
     @Override
